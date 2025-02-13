@@ -1,0 +1,105 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coupons_and_deals",
+  "info": {
+    "singularName": "coupons-and-deal",
+    "pluralName": "coupons-and-deals",
+    "displayName": "Coupons And Deal",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "text"
+    },
+    "ShortInfo": {
+      "type": "text"
+    },
+    "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "CouponsType": {
+      "type": "enumeration",
+      "enum": [
+        "Coupon Code",
+        "Promotion"
+      ]
+    },
+    "CouponCode": {
+      "type": "string"
+    },
+    "CouponUrl": {
+      "type": "text"
+    },
+    "ExpireDate": {
+      "type": "date"
+    },
+    "StartDate": {
+      "type": "date"
+    },
+    "DiscountValue": {
+      "type": "string"
+    },
+    "ExclusiveCoupon": {
+      "type": "boolean"
+    },
+    "FavoritesCoupon": {
+      "type": "boolean"
+    },
+    "NumberOfCouponUsed": {
+      "type": "integer"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "coupons_and_deals"
+    },
+    "store": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::store.store",
+      "inversedBy": "coupons_and_deals"
+    },
+    "Feature_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "Rating": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "Faqs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.faq"
+    }
+  }
+}

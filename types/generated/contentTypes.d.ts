@@ -369,9 +369,106 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
+  info: {
+    displayName: 'Category';
+    pluralName: 'categories';
+    singularName: 'category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    coupons_and_deals: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::coupons-and-deal.coupons-and-deal'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Icon: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    > &
+      Schema.Attribute.Private;
+    Name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    Slug: Schema.Attribute.UID<'Name'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCouponsAndDealCouponsAndDeal
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'coupons_and_deals';
+  info: {
+    description: '';
+    displayName: 'Coupons And Deal';
+    pluralName: 'coupons-and-deals';
+    singularName: 'coupons-and-deal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    CouponCode: Schema.Attribute.String;
+    CouponsType: Schema.Attribute.Enumeration<['Coupon Code', 'Promotion']>;
+    CouponUrl: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Blocks;
+    DiscountValue: Schema.Attribute.String;
+    ExclusiveCoupon: Schema.Attribute.Boolean;
+    ExpireDate: Schema.Attribute.Date;
+    Faqs: Schema.Attribute.Component<'shared.faq', true>;
+    FavoritesCoupon: Schema.Attribute.Boolean;
+    Feature_image: Schema.Attribute.Media<'images' | 'files'>;
+    Icon: Schema.Attribute.Media<'images' | 'files'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::coupons-and-deal.coupons-and-deal'
+    > &
+      Schema.Attribute.Private;
+    NumberOfCouponUsed: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    Rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
+    ShortInfo: Schema.Attribute.Text;
+    Slug: Schema.Attribute.UID<'Title'>;
+    StartDate: Schema.Attribute.Date;
+    store: Schema.Attribute.Relation<'manyToOne', 'api::store.store'>;
+    Title: Schema.Attribute.Text;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface ApiStoreStore extends Struct.CollectionTypeSchema {
   collectionName: 'stores';
   info: {
+    description: '';
     displayName: 'Store';
     pluralName: 'stores';
     singularName: 'store';
@@ -380,15 +477,21 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    coupons_and_deals: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::coupons-and-deal.coupons-and-deal'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Icon: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::store.store'> &
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Name'>;
+    Social: Schema.Attribute.Component<'shared.social', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -904,6 +1007,8 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::category.category': ApiCategoryCategory;
+      'api::coupons-and-deal.coupons-and-deal': ApiCouponsAndDealCouponsAndDeal;
       'api::store.store': ApiStoreStore;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
