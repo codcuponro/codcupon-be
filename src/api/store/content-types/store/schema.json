@@ -38,6 +38,28 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.social"
+    },
+    "Title": {
+      "type": "text"
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "Favorit": {
+      "type": "boolean"
+    },
+    "Rating": {
+      "type": "integer",
+      "max": 5,
+      "min": 1
+    },
+    "Content": {
+      "type": "blocks"
     }
   }
 }

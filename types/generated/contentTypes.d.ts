@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
+    description: '';
     displayName: 'Category';
     pluralName: 'categories';
     singularName: 'category';
@@ -387,6 +388,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Excerpt: Schema.Attribute.Text;
     Icon: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -396,7 +398,9 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Short_Info: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Name'>;
+    Top: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -430,7 +434,6 @@ export interface ApiCouponsAndDealCouponsAndDeal
     DiscountValue: Schema.Attribute.String;
     ExclusiveCoupon: Schema.Attribute.Boolean;
     ExpireDate: Schema.Attribute.Date;
-    Faqs: Schema.Attribute.Component<'shared.faq', true>;
     FavoritesCoupon: Schema.Attribute.Boolean;
     Feature_image: Schema.Attribute.Media<'images' | 'files'>;
     Icon: Schema.Attribute.Media<'images' | 'files'>;
@@ -477,6 +480,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Content: Schema.Attribute.Blocks;
     coupons_and_deals: Schema.Attribute.Relation<
       'oneToMany',
       'api::coupons-and-deal.coupons-and-deal'
@@ -484,17 +488,32 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Excerpt: Schema.Attribute.Text;
+    Favorit: Schema.Attribute.Boolean;
     Icon: Schema.Attribute.Media<'images' | 'files'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::store.store'> &
       Schema.Attribute.Private;
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    Rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
     Slug: Schema.Attribute.UID<'Name'>;
     Social: Schema.Attribute.Component<'shared.social', false>;
+    Title: Schema.Attribute.Text;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 

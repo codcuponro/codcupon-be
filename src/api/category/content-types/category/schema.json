@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Category"
+    "displayName": "Category",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,18 +20,28 @@
       "targetField": "Name"
     },
     "Icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "coupons_and_deals": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::coupons-and-deal.coupons-and-deal",
       "mappedBy": "categories"
+    },
+    "Top": {
+      "type": "boolean"
+    },
+    "Excerpt": {
+      "type": "text"
+    },
+    "Short_Info": {
+      "type": "text"
     }
   }
 }

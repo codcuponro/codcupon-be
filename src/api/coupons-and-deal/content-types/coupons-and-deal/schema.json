@@ -95,11 +95,6 @@
       "type": "integer",
       "max": 5,
       "min": 1
-    },
-    "Faqs": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.faq"
     }
   }
 }
