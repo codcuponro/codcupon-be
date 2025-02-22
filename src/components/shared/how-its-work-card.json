@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_how_its_work_cards",
+  "info": {
+    "displayName": "How its work card"
+  },
+  "options": {},
+  "attributes": {
+    "Icon": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "Title": {
+      "type": "string"
+    },
+    "Caption": {
+      "type": "text"
+    }
+  }
+}
