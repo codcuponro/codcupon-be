@@ -23,6 +23,17 @@ export interface SharedHowItsWorkCard extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'Link';
+  };
+  attributes: {
+    Href: Schema.Attribute.Text;
+    Label: Schema.Attribute.Text;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -57,6 +68,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'shared.faq': SharedFaq;
       'shared.how-its-work-card': SharedHowItsWorkCard;
+      'shared.link': SharedLink;
       'shared.seo': SharedSeo;
       'shared.social': SharedSocial;
     }
