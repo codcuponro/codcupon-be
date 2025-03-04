@@ -428,6 +428,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Short_Info: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Name'>;
+    Small_Icon: Schema.Attribute.Media<'images' | 'files'>;
     Top: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -460,7 +461,6 @@ export interface ApiCouponsAndDealCouponsAndDeal
       Schema.Attribute.Private;
     Description: Schema.Attribute.Blocks;
     DiscountValue: Schema.Attribute.String;
-    ExclusiveCoupon: Schema.Attribute.Boolean;
     ExpireDate: Schema.Attribute.Date;
     FavoritesCoupon: Schema.Attribute.Boolean;
     Feature_image: Schema.Attribute.Media<'images' | 'files'>;
@@ -482,6 +482,7 @@ export interface ApiCouponsAndDealCouponsAndDeal
         number
       >;
     ShortInfo: Schema.Attribute.Text;
+    Slider: Schema.Attribute.Boolean;
     Slug: Schema.Attribute.UID<'Title'>;
     StartDate: Schema.Attribute.Date;
     store: Schema.Attribute.Relation<'manyToOne', 'api::store.store'>;

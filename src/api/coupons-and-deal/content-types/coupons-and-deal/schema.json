@@ -56,7 +56,7 @@
     "DiscountValue": {
       "type": "string"
     },
-    "ExclusiveCoupon": {
+    "Slider": {
       "type": "boolean"
     },
     "FavoritesCoupon": {
