@@ -9,8 +9,5 @@ module.exports = ({ env }) => ({
                 space: env('DO_SPACES_BUCKET'),
             }
         },
-    },
-    seo: {
-        enabled: true,
-    },
+    }
 });
