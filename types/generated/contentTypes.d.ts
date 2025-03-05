@@ -428,7 +428,6 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     Short_Info: Schema.Attribute.Text;
     Slug: Schema.Attribute.UID<'Name'>;
-    Small_Icon: Schema.Attribute.Media<'images' | 'files'>;
     Top: Schema.Attribute.Boolean;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

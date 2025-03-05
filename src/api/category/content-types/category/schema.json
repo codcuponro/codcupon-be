@@ -42,14 +42,6 @@
     },
     "Short_Info": {
       "type": "text"
-    },
-    "Small_Icon": {
-      "allowedTypes": [
-        "images",
-        "files"
-      ],
-      "type": "media",
-      "multiple": false
     }
   }
 }
