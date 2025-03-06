@@ -435,6 +435,34 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCookiePolicyCookiePolicy extends Struct.SingleTypeSchema {
+  collectionName: 'cookie_policies';
+  info: {
+    displayName: 'Cookie Policy';
+    pluralName: 'cookie-policies';
+    singularName: 'cookie-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cookie-policy.cookie-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCouponsAndDealCouponsAndDeal
   extends Struct.CollectionTypeSchema {
   collectionName: 'coupons_and_deals';
@@ -590,6 +618,34 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiPrivacyPrivacy extends Struct.SingleTypeSchema {
+  collectionName: 'privacies';
+  info: {
+    displayName: 'Privacy';
+    pluralName: 'privacies';
+    singularName: 'privacy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy.privacy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStoreStore extends Struct.CollectionTypeSchema {
   collectionName: 'stores';
   info: {
@@ -636,6 +692,35 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
       'oneToOne',
       'plugin::users-permissions.user'
     >;
+  };
+}
+
+export interface ApiTermsAnsConditionTermsAnsCondition
+  extends Struct.SingleTypeSchema {
+  collectionName: 'terms_ans_conditions';
+  info: {
+    displayName: 'Terms Ans Condition';
+    pluralName: 'terms-ans-conditions';
+    singularName: 'terms-ans-condition';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Content: Schema.Attribute.Blocks;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-ans-condition.terms-ans-condition'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1150,11 +1235,14 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::category.category': ApiCategoryCategory;
+      'api::cookie-policy.cookie-policy': ApiCookiePolicyCookiePolicy;
       'api::coupons-and-deal.coupons-and-deal': ApiCouponsAndDealCouponsAndDeal;
       'api::footer.footer': ApiFooterFooter;
       'api::header.header': ApiHeaderHeader;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::privacy.privacy': ApiPrivacyPrivacy;
       'api::store.store': ApiStoreStore;
+      'api::terms-ans-condition.terms-ans-condition': ApiTermsAnsConditionTermsAnsCondition;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

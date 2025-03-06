@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "terms_ans_conditions",
+  "info": {
+    "singularName": "terms-ans-condition",
+    "pluralName": "terms-ans-conditions",
+    "displayName": "Terms Ans Condition"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Content": {
+      "type": "blocks"
+    }
+  }
+}
