@@ -4,15 +4,25 @@
   "info": {
     "singularName": "terms-ans-condition",
     "pluralName": "terms-ans-conditions",
-    "displayName": "Terms Ans Condition"
+    "displayName": "Terms Ans Condition",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Content": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

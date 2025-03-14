@@ -4,47 +4,97 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "Footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Caption": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "MobileNumber": {
       "type": "component",
       "repeatable": false,
-      "component": "shared.link"
+      "component": "shared.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Resources": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link"
+      "component": "shared.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Company": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link"
+      "component": "shared.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "QuickLinks": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link"
+      "component": "shared.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Facebook": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Twitter": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Youtube": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "Linkedin": {
-      "type": "text"
+      "type": "text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -4,15 +4,25 @@
   "info": {
     "singularName": "about-page",
     "pluralName": "about-pages",
-    "displayName": "About Page"
+    "displayName": "About Page",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Content": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

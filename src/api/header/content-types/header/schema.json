@@ -4,17 +4,27 @@
   "info": {
     "singularName": "header",
     "pluralName": "headers",
-    "displayName": "Header"
+    "displayName": "Header",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Navigation": {
       "type": "component",
       "repeatable": true,
-      "component": "shared.link"
+      "component": "shared.link",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

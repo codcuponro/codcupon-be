@@ -4,15 +4,25 @@
   "info": {
     "singularName": "cookie-policy",
     "pluralName": "cookie-policies",
-    "displayName": "Cookie Policy"
+    "displayName": "Cookie Policy",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Content": {
-      "type": "blocks"
+      "type": "blocks",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }
