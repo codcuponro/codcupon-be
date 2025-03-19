@@ -74,11 +74,6 @@
         }
       }
     },
-    "users_permissions_user": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
-    },
     "Favorit": {
       "type": "boolean",
       "pluginOptions": {
@@ -104,6 +99,12 @@
           "localized": true
         }
       }
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::author.author",
+      "inversedBy": "store"
     }
   }
 }
