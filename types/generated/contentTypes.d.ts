@@ -977,7 +977,7 @@ export interface ApiTermsAnsConditionTermsAnsCondition
   collectionName: 'terms_ans_conditions';
   info: {
     description: '';
-    displayName: 'Terms Ans Condition';
+    displayName: 'Terms And Condition';
     pluralName: 'terms-ans-conditions';
     singularName: 'terms-ans-condition';
   };
