@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "theme_options",
+  "info": {
+    "singularName": "theme-option",
+    "pluralName": "theme-options",
+    "displayName": "Theme Options",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "PopularSearch": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.link"
+    }
+  }
+}
