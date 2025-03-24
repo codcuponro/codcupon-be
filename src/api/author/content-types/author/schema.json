@@ -18,9 +18,9 @@
       "type": "uid",
       "targetField": "Name"
     },
-    "store": {
+    "stores": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::store.store",
       "mappedBy": "author"
     }

@@ -421,7 +421,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
     Name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     Slug: Schema.Attribute.UID<'Name'>;
-    store: Schema.Attribute.Relation<'oneToOne', 'api::store.store'>;
+    stores: Schema.Attribute.Relation<'oneToMany', 'api::store.store'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -693,7 +693,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    author: Schema.Attribute.Relation<'oneToOne', 'api::author.author'>;
+    author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     Content: Schema.Attribute.Blocks;
     coupons_and_deals: Schema.Attribute.Relation<
       'oneToMany',
