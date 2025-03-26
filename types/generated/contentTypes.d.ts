@@ -693,6 +693,7 @@ export interface ApiStoreStore extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    AffiliateLink: Schema.Attribute.Text;
     author: Schema.Attribute.Relation<'manyToOne', 'api::author.author'>;
     Content: Schema.Attribute.Blocks;
     coupons_and_deals: Schema.Attribute.Relation<
